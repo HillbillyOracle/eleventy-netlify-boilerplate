@@ -1,7 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&family=Playfair+Display:wght@700&display=swap');
+
 :root {
-	--primary: blue;
-	--secondary: white;
-	--background: #FFF0EB;
+  --primary: #3B6D4C;       /* Deep forest green */
+  --secondary: #E6D5B8;     /* Soft warm beige */
+  --accent: #8A3E1D;        /* Clay/rust accent */
+  --background: #F9F5EF;    /* Off-white, parchment feel */
 }
 
 *, *:before, *:after {
@@ -10,161 +13,125 @@
 
 html,
 body {
-	padding: 0;
-	margin: 0;
-	font-family: "Avenir", "Avenir Next", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  padding: 0;
+  margin: 0;
+  font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  background-color: var(--background);
+  color: #333;
 }
 
 body {
-	display: grid;
-	height: 100vh;
-	grid-template-rows: auto 1fr auto;
-	background-color: var(--background);
+  display: grid;
+  height: 100vh;
+  grid-template-rows: auto 1fr auto;
 }
 
 main {
-	max-width: 37.5em;
+  max-width: 42em;
+  margin: 0 auto;
 }
 
 p,
 pre,
 code {
-	line-height: 1.5;
+  line-height: 1.6;
 }
 
 a[href],
 a[href]:visited {
-	color: var(--primary);
+  color: var(--primary);
+  text-decoration: none;
+  border-bottom: 2px solid var(--accent);
+  transition: color 0.2s, border-color 0.2s;
 }
 
-a[href]:not(:hover) {
-	text-decoration: none;
+a[href]:hover {
+  color: var(--accent);
+  border-color: var(--primary);
 }
 
 img {
-	max-width: 100%;
-	height: auto;
+  max-width: 100%;
+  height: auto;
+  border-radius: 0.5em;
 }
 
 header,
 main,
 footer {
-	padding: 1em;
+  padding: 1.5em;
 }
 
-main {
-	padding-bottom: 2em;
-}
-
-main :first-child,
-main > article :first-child {
-	margin-top: 0;
-}
-
-pre {
-	font-size: 14px;
-	direction: ltr;
-	text-align: left;
-	white-space: pre;
-	word-spacing: normal;
-	word-break: normal;
-	-moz-tab-size: 2;
-	tab-size: 2;
-	-webkit-hyphens: none;
-	-moz-hyphens: none;
-	-ms-hyphens: none;
-	hyphens: none;
-	padding: 1em;
-	margin: .5em 0;
-}
-
-/* Header Logo (style as h2) */
 header > em {
-	display: block;
-	font-size: 2em;
-	margin: .67em 0;
-	font-weight: bold;
-	font-style: normal;
+  display: block;
+  font-family: "Playfair Display", serif;
+  font-size: 2.5em;
+  margin: .67em 0;
+  font-weight: 700;
+  font-style: normal;
+  color: var(--primary);
 }
 
-/* Header Nav */
 header nav ul {
-	padding: 0;
-	list-style: none;
-}
-
-header nav ul :first-child {
-	margin-left: 0;
+  padding: 0;
+  list-style: none;
+  text-align: center;
 }
 
 header nav li {
-	display: inline-block;
-	margin: 0 .25em;
+  display: inline-block;
+  margin: 0 .5em;
 }
 
 header nav li a {
-	padding: .25em .5em;
-	border-radius: .25em;
+  padding: .4em .8em;
+  border-radius: .3em;
+  background-color: var(--secondary);
+  color: var(--primary);
+  font-weight: 500;
 }
 
-header nav li a[href]:not(:hover) {
-	text-decoration: none;
+header nav li a:hover {
+  background-color: var(--accent);
+  color: var(--secondary);
 }
 
-header nav li a[data-current="current item"] {
-	background-color: white;
-}
-
-/* Posts List */
 article {
-	margin-bottom: 1em;
-	padding-bottom: 1em;
-	border-bottom: 1px solid #eee;
-	border-bottom: 1px solid var(--secondary);
+  margin-bottom: 2em;
+  padding-bottom: 1em;
+  border-bottom: 2px solid var(--secondary);
 }
 
 main > section > article > * {
-	margin-top: 0;
-	margin-bottom: .5em;
+  margin-top: 0;
+  margin-bottom: 0.75em;
 }
 
-/* Post Tags */
 a[rel="tag"],
 a[rel="tag"]:visited {
-	display: inline-block;
-  vertical-align: text-top;
+  display: inline-block;
   text-transform: uppercase;
-	letter-spacing: .1em;
-  font-size: .625em;
-  padding: 0 .5em;
-	line-height: 2em;
-	height: 2em;
-  border: 1px solid var(--secondary);
-	background-color: var(--secondary);
-	color: var(--primary);
-  border-radius: .25em;
-  text-decoration: none;
-	margin: 0 .5em .5em 0;
+  letter-spacing: .1em;
+  font-size: 0.7em;
+  padding: 0.3em 0.8em;
+  line-height: 2em;
+  border: 2px solid var(--primary);
+  background-color: var(--secondary);
+  color: var(--primary);
+  border-radius: .3em;
+  margin: 0 .5em .5em 0;
+  transition: all 0.2s;
 }
 
 a[rel="tag"]:hover {
-	border: 1px solid var(--primary);
-	background-color: var(--primary);
-	color: var(--secondary);
+  background-color: var(--primary);
+  color: var(--secondary);
+  border-color: var(--accent);
 }
 
-a[rel="tag"]:last-child {
-	margin-right: 0;
-}
-
-/* Contact Form */
 form {
   display: grid;
-	padding: 2em 0;
-}
-
-form label {
-  display: none;
+  padding: 2em 0;
 }
 
 input,
@@ -173,24 +140,34 @@ button {
   width: 100%;
   padding: 1em;
   margin-bottom: 1em;
-	font-size: 1rem;
-	font-family: "Avenir", "Avenir Next", sans-serif;
+  font-size: 1rem;
+  font-family: "Montserrat", sans-serif;
 }
 
 input,
 textarea {
-	border: 1px solid black;
+  border: 2px solid var(--primary);
+  background-color: #fff;
+  border-radius: .3em;
 }
 
 button {
-	border: 1px solid var(--primary);
-	background-color: var(--primary);
-	color: var(--secondary);
-	cursor: pointer;
+  border: none;
+  background-color: var(--primary);
+  color: var(--secondary);
+  font-weight: 700;
+  text-transform: uppercase;
+  border-radius: .3em;
+  cursor: pointer;
+  transition: background-color 0.2s;
 }
 
-@media screen and (min-width:768px) {
-	:root {
-		font-size: 1.1rem;
-	}
+button:hover {
+  background-color: var(--accent);
+}
+
+@media screen and (min-width: 768px) {
+  :root {
+    font-size: 1.1rem;
+  }
 }
